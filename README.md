@@ -12,6 +12,6 @@ The redesign keeps the existing bootcamp structure and links, but shifts the vis
 ## Notes
 
 - All custom visual elements are SVG files in `icons/`.
-- `icons/warren-buffett.svg` is a stylized illustration for the final section. If your team has an official licensed PNG/photo, replace the image path in the `.oracle-img` tag.
+- `icons/warren_buffet.png` is the photo used in the final section. To swap it, replace the image path in the `.oracle-img` tag.
 - No fixed `body height` is used, so the layout will grow naturally with content.
 - The mobile menu is controlled by `index.js`.
