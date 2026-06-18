@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 340" role="img" aria-label="Upward growth chart">
+  <defs>
+    <linearGradient id="gc-front" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#9a78ff"/>
+      <stop offset="1" stop-color="#6f4ae6"/>
+    </linearGradient>
+    <linearGradient id="gc-arrow" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0" stop-color="#c2e83f"/>
+      <stop offset="1" stop-color="#e8ff7a"/>
+    </linearGradient>
+  </defs>
+
+  <!-- bars: front / top / side faces for a 3D feel -->
+  <!-- bar 1 -->
+  <polygon points="40,232 96,232 114,220 58,220" fill="#bfa6ff"/>
+  <polygon points="96,232 114,220 114,288 96,300" fill="#5a37c4"/>
+  <rect x="40" y="232" width="56" height="68" fill="url(#gc-front)"/>
+  <!-- bar 2 -->
+  <polygon points="130,182 186,182 204,170 148,170" fill="#bfa6ff"/>
+  <polygon points="186,182 204,170 204,288 186,300" fill="#5a37c4"/>
+  <rect x="130" y="182" width="56" height="118" fill="url(#gc-front)"/>
+  <!-- bar 3 -->
+  <polygon points="220,126 276,126 294,114 238,114" fill="#bfa6ff"/>
+  <polygon points="276,126 294,114 294,288 276,300" fill="#5a37c4"/>
+  <rect x="220" y="126" width="56" height="174" fill="url(#gc-front)"/>
+  <!-- bar 4 -->
+  <polygon points="310,66 366,66 384,54 328,54" fill="#bfa6ff"/>
+  <polygon points="366,66 384,54 384,288 366,300" fill="#5a37c4"/>
+  <rect x="310" y="66" width="56" height="234" fill="url(#gc-front)"/>
+
+  <!-- upward arrow -->
+  <polyline points="46,262 150,224 236,250 360,72"
+    fill="none" stroke="url(#gc-arrow)" stroke-width="14"
+    stroke-linecap="round" stroke-linejoin="round"
+    style="filter:drop-shadow(0 0 10px rgba(214,247,77,.5))"/>
+  <path d="M324 58 L372 56 L362 104 Z" fill="#d6f74d"/>
+</svg>
