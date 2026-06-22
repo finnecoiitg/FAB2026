@@ -28,8 +28,8 @@
         </a>
 
         <div class="nav-links" id="navLinks">
-          <a href="#about">About</a>
-          <a href="#details">Details</a>
+          <a href="#details">About</a>
+          <!-- <a href="#details">Details</a> -->
           <a href="#curriculum">Curriculum</a>
           <a href="#quizzes">Quiz</a>
           <a href="#project">Project</a>
@@ -136,7 +136,7 @@
       <section id="about" class="about section-pad">
         <div class="about-panel reveal">
           <div class="about-device" aria-hidden="true">
-            <img src="icons/image-84.png" alt="" />
+            <img class="image-84" src="icons/image-84.png" alt="" />
           </div>
           <div class="about-copy">
             <h2>About the Course</h2>
@@ -735,13 +735,22 @@
     </main>
 
     <footer class="site-footer">
-      <img
-        class="footer-portrait"
-        src="icons/warren_buffet.png"
-        alt="Warren Buffett"
-      />
       <div class="footer-inner">
+        <!-- 1. FIRST: Let's Master Title -->
         <h2 class="footer-title">Let’s Master &amp; Grow together…</h2>
+
+        <!-- 3. THIRD: The Image -->
+        <img
+          class="footer-portrait"
+          src="icons/warren_buffet.png"
+          alt="Warren Buffett"
+        />
+
+        <!-- 2. SECOND: The Quote -->
+        <blockquote class="footer-quote">
+          <p>Risk comes from not knowing what you’re doing.</p>
+          <cite>— Warren Buffett</cite>
+        </blockquote>
 
         <div class="footer-body">
           <div class="footer-connect">
@@ -827,13 +836,9 @@
               </a>
             </div>
           </div>
-
-          <blockquote class="footer-quote">
-            <p>Risk comes from not knowing what you’re doing.</p>
-            <cite>— Warren Buffett</cite>
-          </blockquote>
         </div>
 
+        <!-- 5. FIFTH: Copyright text -->
         <p class="footer-copy">
           © Finance and Economics Club, IIT Guwahati. All rights reserved.
         </p>
