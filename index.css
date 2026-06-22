@@ -412,12 +412,12 @@ button {
 .item-3 {
   left: 49%;
   top: 13%;
-  width: clamp(72px, 10vw, 140px);
+  width: clamp(32px, 5vw, 80px);
   animation-delay: 0.6s;
 }
 .item-4 {
   right: 32%;
-  top: 18%;
+  top: 30%;
   animation-delay: 1.5s;
 }
 .item-5 {
@@ -428,11 +428,13 @@ button {
 .item-6 {
   right: 25%;
   bottom: 25%;
+  width: clamp(32px, 5vw, 80px);
   animation-delay: 1.8s;
 }
 .item-7 {
-  left: 39%;
-  bottom: 24%;
+  left: 40%;
+  bottom: 14%;
+  width: clamp(32px, 5vw, 80px);
   animation-delay: 0.2s;
 }
 @keyframes float {
@@ -802,8 +804,8 @@ button {
   height: 20px;
 }
 .ghost-cta:hover {
-  background: var(--lime);
-  border-color: var(--lime);
+  background: var(--yellow);
+  border-color: var(--yellow);
   color: #090812;
   transform: translateY(-3px);
 }
@@ -852,14 +854,14 @@ button {
 }
 .footer-quote {
   margin: 0;
+  text-align: right;
   position: relative;
-  padding-left: 34px;
+  /* padding-left: 34px; */
 }
 .footer-quote:before {
   content: "\201C";
   position: absolute;
-  left: -2px;
-  top: -22px;
+  top: -15px;
   font-family: Outfit, Georgia, serif;
   font-size: 4rem;
   line-height: 1;
@@ -868,9 +870,14 @@ button {
 }
 .footer-quote p {
   margin: 0;
+  position: relative; 
+  display: inline-block; 
+  padding-left: 35px; 
+  padding-right: 35px; 
   font-size: clamp(1.05rem, 1.6vw, 1.35rem);
   font-weight: 700;
   line-height: 1.5;
+  text-align: left;
 }
 .footer-quote p::after {
   content: "\201D";
@@ -979,7 +986,7 @@ button {
     padding-left: 24px;
   }
 }
-@media (max-width: 760px) {
+@media (max-width: 768px) {
   .site-header {
     padding: 12px;
   }
@@ -1023,12 +1030,31 @@ button {
   .section-pad {
     padding: 64px 20px;
   }
+  .hero {
+    height: auto;
+    min-height: max-content;
+  }
   .hero-copy h1 {
-    font-size: clamp(3.4rem, 17vw, 6.5rem);
-    letter-spacing: -0.08em;
+    /* font-size: clamp(3.4rem, 17vw, 6.5rem);
+    letter-spacing: -0.08em; */
+    font-size: 11vw;
+    line-height: 1.1;
+    word-wrap: break-word;
+    text-align: center;
   }
   .hero-grid {
     gap: 28px;
+  }
+  .hero-subtitle {
+    text-align: center;
+    padding: 0 15px;
+  }
+  .hero-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
   }
   .poster-card {
     border-radius: 28px;
@@ -1078,9 +1104,9 @@ button {
     flex-direction: column;
     align-items: flex-start;
   }
-  .socials {
+  /* .socials {
     justify-content: flex-start;
-  }
+  } */
 }
 @media (prefers-reduced-motion: reduce) {
   * {
