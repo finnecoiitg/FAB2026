@@ -1,16 +1,81 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="Cursor arrow">
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" fill="none">
+  <defs>
+    <linearGradient id="outerGlass" x1="105" y1="38" x2="424" y2="435" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#F6EEFF"/>
+      <stop offset="0.22" stop-color="#DAB7FF"/>
+      <stop offset="0.48" stop-color="#F044D5"/>
+      <stop offset="0.76" stop-color="#AC72FF"/>
+      <stop offset="1" stop-color="#6FE7FF"/>
+    </linearGradient>
 
-<defs>
-  <linearGradient id="g" x1="10" y1="12" x2="118" y2="120" gradientUnits="userSpaceOnUse">
-    <stop stop-color="#7C3CFF"/>
-    <stop offset="0.52" stop-color="#FF4FD8"/>
-    <stop offset="1" stop-color="#D6F74D"/>
-  </linearGradient>
-  <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
-    <feGaussianBlur stdDeviation="3" result="b"/>
-    <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
-  </filter>
-</defs>
+    <linearGradient id="mainFill" x1="136" y1="76" x2="355" y2="381" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#8B49FF"/>
+      <stop offset="0.22" stop-color="#B84CFF"/>
+      <stop offset="0.54" stop-color="#F044D5"/>
+      <stop offset="0.78" stop-color="#E86BE8"/>
+      <stop offset="1" stop-color="#72DBFF"/>
+    </linearGradient>
 
-<path d="M24 14 109 68 72 76 55 113 24 14Z" fill="url(#g)" stroke="#F8F4FF" stroke-width="4" stroke-linejoin="round"/>
+    <linearGradient id="innerGlow" x1="186" y1="101" x2="332" y2="319" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity="0.78"/>
+      <stop offset="0.28" stop-color="#FFD7FA" stop-opacity="0.32"/>
+      <stop offset="0.7" stop-color="#62E8FF" stop-opacity="0.16"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+    </linearGradient>
+
+    <linearGradient id="edgeShine" x1="119" y1="69" x2="348" y2="431" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity="0.95"/>
+      <stop offset="0.22" stop-color="#FFFFFF" stop-opacity="0.7"/>
+      <stop offset="0.48" stop-color="#FFB4F4" stop-opacity="0.55"/>
+      <stop offset="0.78" stop-color="#7CEBFF" stop-opacity="0.72"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0.2"/>
+    </linearGradient>
+
+    <filter id="softShadow" x="46" y="20" width="428" height="480" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="14" stdDeviation="18" flood-color="#6F35E8" flood-opacity="0.22"/>
+      <feDropShadow dx="0" dy="2" stdDeviation="5" flood-color="#FF61D7" flood-opacity="0.20"/>
+    </filter>
+
+    <filter id="innerSoft" x="88" y="42" width="358" height="422" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="1.8"/>
+    </filter>
+
+    <path id="cursorShape" d="M111.5 51.5C107.3 42.2 119.1 33.9 127.1 40.1L438.3 217.5C446.8 224 443.7 237.5 433.2 239.6L306.7 265.4C300.2 266.7 295 271.5 293.1 277.9L237.1 458.6C234.1 468.2 220.6 468.6 217.1 459.1L111.5 51.5Z"/>
+  </defs>
+
+  <g filter="url(#softShadow)">
+    <!-- glossy white outer rim -->
+    <use href="#cursorShape" fill="url(#outerGlass)"/>
+    <use href="#cursorShape" fill="none" stroke="#FFFFFF" stroke-opacity="0.78" stroke-width="12" stroke-linejoin="round"/>
+
+    <!-- main body -->
+    <path d="M135.4 82.9L388.3 225.5L285.8 246.3C272.7 248.9 262.2 258.8 258.3 271.6L222.4 386.9L135.4 82.9Z"
+          fill="url(#mainFill)"/>
+
+    <!-- soft glass overlay -->
+    <path d="M149 94.3L367 219.1L281.2 236.8C263.1 240.5 248.7 254.1 243.5 271.8L219.4 354.9L149 94.3Z"
+          fill="url(#innerGlow)" opacity="0.9"/>
+
+    <!-- inner bevel edge -->
+    <path d="M135.4 82.9L388.3 225.5L285.8 246.3C272.7 248.9 262.2 258.8 258.3 271.6L222.4 386.9L135.4 82.9Z"
+          fill="none" stroke="#7B38EF" stroke-opacity="0.55" stroke-width="7" stroke-linejoin="round"/>
+
+    <!-- glossy top-left highlight -->
+    <path d="M138 75C179 99 219 122 260 146"
+          stroke="#FFFFFF" stroke-width="16" stroke-linecap="round" opacity="0.78"/>
+
+    <!-- long glass streak -->
+    <path d="M168 118C220 151 270 179 333 212"
+          stroke="#FFD7FA" stroke-width="9" stroke-linecap="round" opacity="0.55"/>
+
+    <!-- lower cyan/pink shine -->
+    <path d="M263 276C250 318 237 359 224 404"
+          stroke="#7AE6FF" stroke-width="13" stroke-linecap="round" opacity="0.62"/>
+    <path d="M293 254L405 231"
+          stroke="#FF8AE8" stroke-width="10" stroke-linecap="round" opacity="0.48"/>
+
+    <!-- tiny edge sparkle-like sheen but professional, no stars -->
+    <path d="M108 48L222 456" stroke="url(#edgeShine)" stroke-width="5" stroke-linecap="round" opacity="0.55"/>
+    <path d="M128 46L434 221" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" opacity="0.38"/>
+  </g>
 </svg>
