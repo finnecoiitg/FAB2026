@@ -1,19 +1,134 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="Candlestick chart">
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="wickGrad" x1="116" y1="56" x2="402" y2="426" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FBD5FF"/>
+      <stop offset="0.28" stop-color="#FF4EDB"/>
+      <stop offset="0.58" stop-color="#7A4DFF"/>
+      <stop offset="1" stop-color="#45DFFF"/>
+    </linearGradient>
 
-<defs>
-  <linearGradient id="g" x1="10" y1="12" x2="118" y2="120" gradientUnits="userSpaceOnUse">
-    <stop stop-color="#7C3CFF"/>
-    <stop offset="0.52" stop-color="#FF4FD8"/>
-    <stop offset="1" stop-color="#D6F74D"/>
-  </linearGradient>
-  <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
-    <feGaussianBlur stdDeviation="3" result="b"/>
-    <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
-  </filter>
-</defs>
+    <linearGradient id="leftBody" x1="119" y1="161" x2="219" y2="354" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#F9FF74"/>
+      <stop offset="0.22" stop-color="#D7FF3E"/>
+      <stop offset="0.56" stop-color="#A262FF"/>
+      <stop offset="1" stop-color="#FF64DC"/>
+    </linearGradient>
 
-<path d="M30 20v88M64 10v108M98 30v78" stroke="#F8F4FF" stroke-width="5" stroke-linecap="round"/>
-<rect x="20" y="42" width="20" height="38" rx="6" fill="#D6F74D"/>
-<rect x="54" y="26" width="20" height="52" rx="6" fill="#7C3CFF"/>
-<rect x="88" y="54" width="20" height="34" rx="6" fill="#FF4FD8"/>
+    <linearGradient id="midBody" x1="212" y1="91" x2="310" y2="372" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FF69DE"/>
+      <stop offset="0.22" stop-color="#A35CFF"/>
+      <stop offset="0.58" stop-color="#7648F5"/>
+      <stop offset="1" stop-color="#54E4FF"/>
+    </linearGradient>
+
+    <linearGradient id="rightBody" x1="307" y1="200" x2="405" y2="372" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FF4ACB"/>
+      <stop offset="0.38" stop-color="#F46AF5"/>
+      <stop offset="0.74" stop-color="#8F58FF"/>
+      <stop offset="1" stop-color="#FFE79C"/>
+    </linearGradient>
+
+    <linearGradient id="edgeGrad" x1="116" y1="118" x2="417" y2="361" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity="0.98"/>
+      <stop offset="0.24" stop-color="#FFB3F3" stop-opacity="0.95"/>
+      <stop offset="0.56" stop-color="#8E61FF" stop-opacity="0.92"/>
+      <stop offset="1" stop-color="#38E7FF" stop-opacity="0.9"/>
+    </linearGradient>
+
+    <radialGradient id="baseGrad" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(254 397) rotate(90) scale(68 184)">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity="0.95"/>
+      <stop offset="0.22" stop-color="#FFA7EA" stop-opacity="0.95"/>
+      <stop offset="0.55" stop-color="#8F5BFF" stop-opacity="0.92"/>
+      <stop offset="1" stop-color="#4BDFFF" stop-opacity="0.75"/>
+    </radialGradient>
+
+    <linearGradient id="highlightGrad" x1="147" y1="108" x2="332" y2="342" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity="0.95"/>
+      <stop offset="0.48" stop-color="#FFEAB6" stop-opacity="0.72"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+    </linearGradient>
+
+    <filter id="softShadow" x="50" y="44" width="414" height="422" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="18" stdDeviation="16" flood-color="#6727CE" flood-opacity="0.26"/>
+      <feDropShadow dx="0" dy="4" stdDeviation="5" flood-color="#FF58D6" flood-opacity="0.22"/>
+    </filter>
+
+    <filter id="glow" x="30" y="20" width="452" height="462" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feColorMatrix in="blur" type="matrix" values="1 0 0 0 0.62  0 1 0 0 0.28  0 0 1 0 1  0 0 0 0.45 0" result="glowColor"/>
+      <feMerge>
+        <feMergeNode in="glowColor"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <clipPath id="clipLeft">
+      <rect x="128" y="186" width="72" height="156" rx="24"/>
+    </clipPath>
+    <clipPath id="clipMid">
+      <rect x="215" y="96" width="82" height="256" rx="27"/>
+    </clipPath>
+    <clipPath id="clipRight">
+      <rect x="322" y="222" width="72" height="134" rx="24"/>
+    </clipPath>
+  </defs>
+
+  <!-- Soft pedestal shadow -->
+  <ellipse cx="256" cy="416" rx="154" ry="28" fill="#7A42F4" opacity="0.12"/>
+  <ellipse cx="256" cy="406" rx="134" ry="24" fill="#FF57D8" opacity="0.10"/>
+
+  <g filter="url(#softShadow)">
+    <!-- Iridescent base ring -->
+    <ellipse cx="256" cy="397" rx="156" ry="39" fill="url(#baseGrad)" opacity="0.86"/>
+    <ellipse cx="256" cy="389" rx="141" ry="27" fill="#FFFFFF" opacity="0.17"/>
+    <ellipse cx="256" cy="397" rx="156" ry="39" stroke="url(#edgeGrad)" stroke-width="4" opacity="0.75"/>
+
+    <!-- Wicks -->
+    <g stroke="url(#wickGrad)" stroke-width="13" stroke-linecap="round" opacity="0.96" filter="url(#glow)">
+      <path d="M164 137V390"/>
+      <path d="M256 58V414"/>
+      <path d="M358 174V399"/>
+    </g>
+    <g stroke="#FFFFFF" stroke-width="3.2" stroke-linecap="round" opacity="0.55">
+      <path d="M160 143V244"/>
+      <path d="M252 68V206"/>
+      <path d="M354 181V274"/>
+    </g>
+
+    <!-- Left candle -->
+    <g clip-path="url(#clipLeft)">
+      <rect x="128" y="186" width="72" height="156" rx="24" fill="url(#leftBody)"/>
+      <path d="M132 192C158 178 191 192 204 224V348H164C147 323 136 272 132 192Z" fill="#FFFFFF" opacity="0.18"/>
+      <path d="M150 195C167 190 181 197 190 213" stroke="#FFFFFF" stroke-width="7" stroke-linecap="round" opacity="0.68"/>
+      <path d="M189 206C203 255 197 311 177 342H202V186H189Z" fill="#6427E8" opacity="0.24"/>
+    </g>
+    <rect x="128" y="186" width="72" height="156" rx="24" stroke="url(#edgeGrad)" stroke-width="3" opacity="0.9"/>
+
+    <!-- Center candle -->
+    <g clip-path="url(#clipMid)">
+      <rect x="215" y="96" width="82" height="256" rx="27" fill="url(#midBody)"/>
+      <path d="M219 104C251 84 290 102 306 151V356H258C232 316 221 227 219 104Z" fill="#FFFFFF" opacity="0.16"/>
+      <path d="M236 111C255 99 277 103 291 122" stroke="#FFFFFF" stroke-width="8" stroke-linecap="round" opacity="0.72"/>
+      <path d="M282 112C303 190 299 280 265 352H302V96H282Z" fill="#3A1BAF" opacity="0.23"/>
+      <path d="M226 278C249 286 272 279 294 258" stroke="#58E7FF" stroke-width="15" stroke-linecap="round" opacity="0.22"/>
+    </g>
+    <rect x="215" y="96" width="82" height="256" rx="27" stroke="url(#edgeGrad)" stroke-width="3.5" opacity="0.95"/>
+
+    <!-- Right candle -->
+    <g clip-path="url(#clipRight)">
+      <rect x="322" y="222" width="72" height="134" rx="24" fill="url(#rightBody)"/>
+      <path d="M327 228C353 214 383 227 397 264V360H359C340 333 330 288 327 228Z" fill="#FFFFFF" opacity="0.17"/>
+      <path d="M342 230C358 225 373 231 381 244" stroke="#FFFFFF" stroke-width="7" stroke-linecap="round" opacity="0.7"/>
+      <path d="M383 239C397 280 393 330 374 356H399V222H383Z" fill="#6B1ECF" opacity="0.21"/>
+    </g>
+    <rect x="322" y="222" width="72" height="134" rx="24" stroke="url(#edgeGrad)" stroke-width="3" opacity="0.9"/>
+  </g>
+
+  <!-- Floating sparkles -->
+  <g opacity="0.75">
+    <path d="M402 111L407 125L421 130L407 135L402 149L397 135L383 130L397 125L402 111Z" fill="#FFA8F3"/>
+    <path d="M112 129L115 139L125 142L115 146L112 156L108 146L99 142L108 139L112 129Z" fill="#D2B5FF"/>
+    <path d="M92 298L95 306L103 309L95 312L92 320L89 312L81 309L89 306L92 298Z" fill="#7DEBFF"/>
+    <path d="M429 289L432 297L440 300L432 303L429 311L426 303L418 300L426 297L429 289Z" fill="#F95DDA"/>
+  </g>
 </svg>
