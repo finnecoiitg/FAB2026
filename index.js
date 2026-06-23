@@ -1,3 +1,9 @@
+// Vercel Web Analytics
+import { inject } from '@vercel/analytics';
+
+// Initialize analytics
+inject();
+
 document.addEventListener('DOMContentLoaded', () => {
   const menuBtn = document.getElementById('menuBtn');
   const navLinks = document.getElementById('navLinks');
