@@ -2,9 +2,9 @@ services:
   - type: web
     name: fab-redesign
     runtime: static
-    # No build step — the site is plain HTML/CSS/JS served from the repo root.
-    buildCommand: ""
-    staticPublishPath: .
+    # Build with Vite to bundle @vercel/analytics
+    buildCommand: "npm install && npm run build"
+    staticPublishPath: ./dist
     pullRequestPreviewsEnabled: true
     headers:
       - path: /*
